@@ -109,6 +109,21 @@ document.addEventListener('DOMContentLoaded', function() {
     loadGames(currentCategory);
     setupEventListeners();
     setupSmoothScrolling();
+    // 新增：主推SkillWarz按钮事件
+    const playSkillWarzBtn = document.getElementById('playSkillWarzBtn');
+    if (playSkillWarzBtn) {
+        playSkillWarzBtn.addEventListener('click', function() {
+            // SkillWarz游戏信息
+            const skillwarzGame = {
+                name: "SkillWarz",
+                iframeUrl: "https://www.crazygames.com/embed/skillwarz"
+            };
+            gameModalTitle.textContent = skillwarzGame.name;
+            gameIframe.src = skillwarzGame.iframeUrl;
+            const modal = new bootstrap.Modal(gameModal);
+            modal.show();
+        });
+    }
 });
 
 // Load games based on category
