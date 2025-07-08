@@ -16,9 +16,9 @@ const games = [
     },
     {
         id: 2,
-        name: "Chess Master",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Chess+Master",
-        iframeUrl: "https://example.com/chess-master",
+        name: "Heartstop Tour",
+        thumbnail: "images/heartstop_tour.jpg",
+        iframeUrl: "https://itch.io/embed/3663792",
         category: "strategy"
     },
     {
