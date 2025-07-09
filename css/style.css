@@ -635,39 +635,53 @@ html {
 
 /* Main Game Area 样式 */
 .main-game-area {
-    background: linear-gradient(120deg, #232a2f 60%, #28a745 100%);
+    background: radial-gradient(circle at 70% 30%, #28a74522 0%, #232a2f 100%);
     min-height: 520px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
 }
 .main-game-card {
-    background: rgba(30,40,40,0.95);
-    border-radius: 2rem;
+    background: rgba(30,40,40,0.92);
+    border-radius: 2.2rem;
     box-shadow: 0 8px 32px 0 rgba(40,167,69,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.12);
     color: #fff;
     width: 100%;
     max-width: 1100px;
+    min-height: 380px;
     margin: 0 auto;
-    padding: 3rem 2.5rem;
+    padding: 3.5rem 2.5rem 3.5rem 3rem;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 .main-game-title {
-    font-size: 2.8rem;
-    font-weight: 800;
+    font-size: 3.2rem;
+    font-weight: 900;
     color: #fff;
     letter-spacing: 1px;
+    margin-bottom: 2.2rem;
+}
+.main-game-desc {
+    font-size: 1.2rem;
+    color: #e0ffe0;
+    margin-bottom: 2.2rem;
 }
 .main-game-img {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     border-radius: 50%;
-    border: 6px solid #28a745;
+    border: 8px solid #28a745;
     background: #fff;
-    box-shadow: 0 4px 24px 0 rgba(40,167,69,0.18);
-    margin: 0 auto;
+    box-shadow: 0 12px 36px 0 rgba(40,167,69,0.18);
+    margin: 0 0 0 2.5rem;
+    display: block;
 }
 .main-game-iframe-container {
     margin-top: 2rem;
@@ -683,12 +697,12 @@ html {
     background: #111;
     color: #fff;
     border-radius: 2.5rem;
-    font-size: 1.7rem;
+    font-size: 2rem;
     box-shadow: 0 4px 24px 0 rgba(40,167,69,0.18);
     transition: all 0.2s;
     border: none;
     letter-spacing: 1px;
-    padding: 1rem 3.5rem;
+    padding: 1.2rem 4rem;
 }
 .btn-featured-play:hover {
     background: #28a745;
@@ -717,12 +731,24 @@ html {
     margin-left: 1.2rem;
 }
 @media (max-width: 992px) {
-    .main-game-card, .main-game-info-area {
-        padding: 1.5rem 0.5rem;
+    .main-game-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0.5rem;
+        min-height: 260px;
     }
     .main-game-img {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
+        margin: 2rem 0 0 0;
+    }
+    .main-game-title {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+    }
+    .btn-featured-play {
+        font-size: 1.2rem;
+        padding: 0.8rem 2.5rem;
     }
     .main-game-iframe-container iframe {
         height: 320px;
@@ -730,14 +756,18 @@ html {
 }
 @media (max-width: 576px) {
     .main-game-title {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+    .main-game-desc {
+        font-size: 1rem;
     }
     .main-game-img {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
     }
-    .main-game-card, .main-game-info-area {
+    .main-game-card {
         padding: 1rem 0.2rem;
+        min-height: 120px;
     }
     .main-game-iframe-container iframe {
         height: 200px;

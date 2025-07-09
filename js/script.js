@@ -3,9 +3,17 @@ const games = [
     {
         id: 0,
         name: "SkillWarz",
-        thumbnail: "https://www.crazygames.com/games/skillwarz/cover-1582631588697.png", // 官方封面
+        thumbnail: "images/skillwarz.jpg",
         iframeUrl: "https://www.crazygames.com/embed/skillwarz",
-        category: "action"
+        category: "action",
+        description: "SkillWarz is a fast-paced online FPS game. Join the battle, test your skills, and compete with players worldwide! No download required, play instantly in your browser.",
+        features: [
+            "Multiplayer FPS battles",
+            "Various weapons and maps",
+            "Real-time competition",
+            "No download, play instantly"
+        ],
+        howToPlay: "Use WASD to move, mouse to aim and shoot. Join a room and start playing against other players!"
     },
     {
         id: 1,
@@ -177,17 +185,15 @@ function displayGames(gamesToShow) {
 
 // 渲染主展示区：介绍卡片
 function renderMainGameIntro(game) {
-    let html = `<div class='main-game-card d-flex flex-row align-items-center justify-content-between mx-auto bg-dark text-light p-4 rounded-4 shadow-lg mb-4' style='max-width:1100px;'>`;
+    let html = `<div class='main-game-card d-flex flex-row align-items-center justify-content-between mx-auto bg-dark text-light p-4 rounded-4 shadow-lg mb-4' style='max-width:1100px;min-height:340px;'>`;
     html += `<div class='main-game-content flex-grow-1 pe-4'>`;
-    html += `<h1 class='main-game-title mb-3'>${game.name}</h1>`;
-    html += `<p class='main-game-desc mb-4'>${game.description || ''}</p>`;
+    html += `<h1 class='main-game-title mb-4'>${game.name}</h1>`;
     html += `<div class='mb-3'><button class='btn btn-featured-play btn-lg px-5 py-3 fw-bold' id='mainPlayBtn'><i class='fas fa-play me-2'></i>PLAY GAME</button></div>`;
     html += `</div>`;
     html += `<div class='main-game-img-wrap text-center'>`;
-    html += `<img src='${game.thumbnail}' alt='${game.name}' class='main-game-img rounded-circle shadow' style='width:200px;height:200px;object-fit:cover;border:6px solid #28a745;'>`;
+    html += `<img src='${game.thumbnail}' alt='${game.name}' class='main-game-img rounded-circle shadow' style='width:220px;height:220px;object-fit:cover;border:8px solid #28a745;'>`;
     html += `</div></div>`;
     document.getElementById('main-game-content').innerHTML = html;
-    // 绑定PLAY GAME按钮事件
     document.getElementById('mainPlayBtn').onclick = function() {
         renderMainGameIframe(game);
     };
