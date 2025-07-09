@@ -120,11 +120,16 @@ const fullscreenBtn = document.getElementById('fullscreenBtn');
 // Current filter
 let currentCategory = 'all';
 
+// 记录当前选中游戏id
+let selectedGameId = null;
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     loadGames(currentCategory);
     setupEventListeners();
     setupSmoothScrolling();
+    // 新增：默认显示第一个游戏详情
+    renderDefaultGameDetail();
     // 新增：主推SkillWarz按钮事件
     const playSkillWarzBtn = document.getElementById('playSkillWarzBtn');
     if (playSkillWarzBtn) {
@@ -174,11 +179,10 @@ function displayGames(gamesToShow) {
     });
 }
 
-// Create a game card element
+// 修改createGameCard，点击卡片时渲染详情区
 function createGameCard(game) {
     const col = document.createElement('div');
     col.className = 'col-lg-4 col-md-6 col-sm-12';
-    
     col.innerHTML = `
         <div class="game-card" data-game-id="${game.id}">
             <div class="game-thumbnail">
@@ -195,41 +199,43 @@ function createGameCard(game) {
             </div>
         </div>
     `;
-    
-    // Add click event to game card
+    // 点击卡片时渲染详情区
     col.querySelector('.game-card').addEventListener('click', () => {
-        openGameModal(game);
+        renderGameDetail(game);
     });
-    
     return col;
 }
 
-// 修改openGameModal函数，弹窗中动态展示详情内容
-function openGameModal(game) {
-    gameModalTitle.textContent = game.name;
-    // 新增：填充详情内容
-    let detailsHtml = `<div class='game-details-modal mb-3'>`;
-    if (game.description) {
-        detailsHtml += `<p class='mb-2'><strong>Description:</strong> ${game.description}</p>`;
+// 页面加载时默认显示第一个游戏详情
+function renderDefaultGameDetail() {
+    if (games.length > 0) {
+        selectedGameId = games[0].id;
+        renderGameDetail(games[0]);
+    } else {
+        document.getElementById('game-detail-area').innerHTML = '<div class="text-center text-muted">No game selected.</div>';
     }
+}
+
+// 渲染游戏详情和iframe到#game-detail-area
+function renderGameDetail(game) {
+    selectedGameId = game.id;
+    let html = `<div class='game-details-area bg-dark text-light p-4 rounded-4 shadow-lg mb-4' style='max-width:900px;margin:0 auto;'>`;
+    html += `<div class='row align-items-center mb-4'>`;
+    html += `<div class='col-md-4 text-center mb-3 mb-md-0'><img src='${game.thumbnail}' alt='${game.name}' class='img-fluid rounded shadow' style='max-width:100%;border-radius:1.5rem;max-height:220px;'></div>`;
+    html += `<div class='col-md-8'>`;
+    html += `<h2 class='mb-2'>${game.name}</h2>`;
+    html += `<span class='badge bg-success mb-2'>${capitalizeFirst(game.category)}</span>`;
+    if (game.description) html += `<p class='mb-2'>${game.description}</p>`;
     if (game.features && game.features.length) {
-        detailsHtml += `<div class='mb-2'><strong>Features:</strong><ul class='mb-1'>`;
-        game.features.forEach(f => { detailsHtml += `<li>${f}</li>`; });
-        detailsHtml += `</ul></div>`;
+        html += `<div class='mb-2'><strong>Features:</strong><ul class='mb-1'>`;
+        game.features.forEach(f => { html += `<li>${f}</li>`; });
+        html += `</ul></div>`;
     }
-    if (game.howToPlay) {
-        detailsHtml += `<p class='mb-2'><strong>How to Play:</strong> ${game.howToPlay}</p>`;
-    }
-    detailsHtml += `</div>`;
-    // 插入到modal-body顶部
-    const modalBody = gameModal.querySelector('.modal-body');
-    modalBody.innerHTML = detailsHtml + `<div class='game-iframe-container'><iframe id='gameIframe' src='${game.iframeUrl}' frameborder='0' allowfullscreen></iframe></div>`;
-    // 重新获取iframe引用
-    window.gameIframe = modalBody.querySelector('#gameIframe');
-    const modal = new bootstrap.Modal(gameModal);
-    modal.show();
-    // 加载完成事件
-    window.gameIframe.onload = function() {};
+    if (game.howToPlay) html += `<p class='mb-2'><strong>How to Play:</strong> ${game.howToPlay}</p>`;
+    html += `</div></div>`;
+    html += `<div class='game-iframe-container mt-3'><iframe src='${game.iframeUrl}' frameborder='0' allowfullscreen style='width:100%;height:480px;border-radius:1rem;'></iframe></div>`;
+    html += `</div>`;
+    document.getElementById('game-detail-area').innerHTML = html;
 }
 
 // Setup event listeners
