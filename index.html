@@ -38,10 +38,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#hero">Play Now</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#download">Download</a>
+                            <a class="nav-link" href="#main-game-area">Play Now</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#games">Games</a>
@@ -64,32 +61,25 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
+    <!-- Main Game Area (主展示区) -->
+    <section id="main-game-area" class="main-game-area py-5">
         <div class="container">
-            <div class="featured-game-card d-flex flex-row align-items-center justify-content-between mx-auto">
-                <div class="featured-game-content flex-grow-1 pe-4">
-                    <h1 class="featured-game-title mb-3">SkillWarz</h1>
-                    <p class="featured-game-desc mb-4">
-                        SkillWarz is a fast-paced online FPS game. Join the battle, test your skills, and compete with players worldwide! No download required, play instantly in your browser.
-                    </p>
-                    <button class="btn btn-featured-play btn-lg px-5 py-3 fw-bold" id="playSkillWarzBtn">
-                        <i class="fas fa-play me-2"></i>PLAY GAME
-                    </button>
-                </div>
-                <div class="featured-game-img-wrap text-center">
-                    <img src="images/skillwarz.jpg" alt="SkillWarz" class="featured-game-img rounded-circle shadow">
-                </div>
-            </div>
+            <div id="main-game-content"></div>
+        </div>
+    </section>
+    <!-- Main Game Info Area (介绍区) -->
+    <section id="main-game-info-area" class="main-game-info-area pb-4">
+        <div class="container">
+            <div id="main-game-info-content"></div>
         </div>
     </section>
 
-    <!-- Games Section -->
+    <!-- Games Section (卡片区) -->
     <section id="games" class="games-section py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="section-title text-center mb-5">Featured Games</h2>
+                    <h2 class="section-title text-center mb-5">All Games</h2>
                     
                     <!-- Category Filter -->
                     <div class="category-filter text-center mb-4">

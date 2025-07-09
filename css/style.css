@@ -632,3 +632,114 @@ html {
         padding: 1rem 0.2rem;
     }
 } 
+
+/* Main Game Area 样式 */
+.main-game-area {
+    background: linear-gradient(120deg, #232a2f 60%, #28a745 100%);
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-game-card {
+    background: rgba(30,40,40,0.95);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(40,167,69,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.12);
+    color: #fff;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+.main-game-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.main-game-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #28a745;
+    background: #fff;
+    box-shadow: 0 4px 24px 0 rgba(40,167,69,0.18);
+    margin: 0 auto;
+}
+.main-game-iframe-container {
+    margin-top: 2rem;
+    width: 100%;
+}
+.main-game-iframe-container iframe {
+    width: 100%;
+    height: 480px;
+    border-radius: 1rem;
+    border: none;
+}
+.btn-featured-play {
+    background: #111;
+    color: #fff;
+    border-radius: 2.5rem;
+    font-size: 1.7rem;
+    box-shadow: 0 4px 24px 0 rgba(40,167,69,0.18);
+    transition: all 0.2s;
+    border: none;
+    letter-spacing: 1px;
+    padding: 1rem 3.5rem;
+}
+.btn-featured-play:hover {
+    background: #28a745;
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 32px 0 rgba(40,167,69,0.25);
+}
+
+/* Main Game Info Area 样式 */
+.main-game-info-area {
+    background: rgba(30,40,40,0.98);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px 0 rgba(40,167,69,0.10);
+    color: #fff;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 2rem auto;
+    padding: 2rem 2rem 1.5rem 2rem;
+}
+.main-game-info-area h3 {
+    color: #28a745;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.main-game-info-area ul {
+    margin-left: 1.2rem;
+}
+@media (max-width: 992px) {
+    .main-game-card, .main-game-info-area {
+        padding: 1.5rem 0.5rem;
+    }
+    .main-game-img {
+        width: 120px;
+        height: 120px;
+    }
+    .main-game-iframe-container iframe {
+        height: 320px;
+    }
+}
+@media (max-width: 576px) {
+    .main-game-title {
+        font-size: 1.5rem;
+    }
+    .main-game-img {
+        width: 90px;
+        height: 90px;
+    }
+    .main-game-card, .main-game-info-area {
+        padding: 1rem 0.2rem;
+    }
+    .main-game-iframe-container iframe {
+        height: 200px;
+    }
+} 

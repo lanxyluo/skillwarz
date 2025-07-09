@@ -129,15 +129,16 @@ document.addEventListener('DOMContentLoaded', function() {
     loadGames(currentCategory);
     setupEventListeners();
     setupSmoothScrolling();
-    // 新增：默认显示第一个游戏详情
-    renderDefaultGameDetail();
-    // 移除主推SkillWarz按钮弹窗事件，改为首页内切换
+    renderDefaultMainGame();
+    // 主推SkillWarz按钮切换主展示区
     const playSkillWarzBtn = document.getElementById('playSkillWarzBtn');
     if (playSkillWarzBtn) {
         playSkillWarzBtn.addEventListener('click', function() {
-            // SkillWarz游戏信息
             const skillwarzGame = games.find(g => g.name === "SkillWarz");
-            if (skillwarzGame) renderGameDetail(skillwarzGame);
+            if (skillwarzGame) {
+                selectedGameId = skillwarzGame.id;
+                switchMainGame(skillwarzGame);
+            }
         });
     }
 });
@@ -174,7 +175,53 @@ function displayGames(gamesToShow) {
     });
 }
 
-// 修改createGameCard，点击卡片时渲染详情区
+// 渲染主展示区（iframe+大封面+按钮）
+function renderMainGameArea(game) {
+    let html = `<div class='main-game-card d-flex flex-row align-items-center justify-content-between mx-auto bg-dark text-light p-4 rounded-4 shadow-lg mb-4' style='max-width:1100px;'>`;
+    html += `<div class='main-game-content flex-grow-1 pe-4'>`;
+    html += `<h1 class='main-game-title mb-3'>${game.name}</h1>`;
+    html += `<div class='mb-3'><button class='btn btn-featured-play btn-lg px-5 py-3 fw-bold' id='mainPlayBtn'><i class='fas fa-play me-2'></i>PLAY GAME</button></div>`;
+    html += `</div>`;
+    html += `<div class='main-game-img-wrap text-center'>`;
+    html += `<img src='${game.thumbnail}' alt='${game.name}' class='main-game-img rounded-circle shadow' style='width:200px;height:200px;object-fit:cover;border:6px solid #28a745;'>`;
+    html += `</div></div>`;
+    html += `<div class='main-game-iframe-container mt-4'><iframe src='${game.iframeUrl}' frameborder='0' allowfullscreen style='width:100%;height:480px;border-radius:1rem;'></iframe></div>`;
+    document.getElementById('main-game-content').innerHTML = html;
+}
+
+// 渲染主介绍区
+function renderMainGameInfoArea(game) {
+    let html = `<div class='main-game-info-area bg-dark text-light p-4 rounded-4 shadow-lg mb-4' style='max-width:1100px;margin:0 auto;'>`;
+    html += `<h3 class='mb-3'>About ${game.name}</h3>`;
+    if (game.description) html += `<p class='mb-2'>${game.description}</p>`;
+    if (game.features && game.features.length) {
+        html += `<div class='mb-2'><strong>Features:</strong><ul class='mb-1'>`;
+        game.features.forEach(f => { html += `<li>${f}</li>`; });
+        html += `</ul></div>`;
+    }
+    if (game.howToPlay) html += `<p class='mb-2'><strong>How to Play:</strong> ${game.howToPlay}</p>`;
+    html += `</div>`;
+    document.getElementById('main-game-info-content').innerHTML = html;
+}
+
+// 切换主展示区和介绍区
+function switchMainGame(game) {
+    renderMainGameArea(game);
+    renderMainGameInfoArea(game);
+}
+
+// 页面加载时默认显示第一个游戏
+function renderDefaultMainGame() {
+    if (games.length > 0) {
+        selectedGameId = games[0].id;
+        switchMainGame(games[0]);
+    } else {
+        document.getElementById('main-game-content').innerHTML = '<div class="text-center text-muted">No game selected.</div>';
+        document.getElementById('main-game-info-content').innerHTML = '';
+    }
+}
+
+// 修改createGameCard，点击卡片时切换主展示区
 function createGameCard(game) {
     const col = document.createElement('div');
     col.className = 'col-lg-4 col-md-6 col-sm-12';
@@ -194,14 +241,15 @@ function createGameCard(game) {
             </div>
         </div>
     `;
-    // 点击卡片时渲染详情区
+    // 点击卡片时切换主展示区
     col.querySelector('.game-card').addEventListener('click', () => {
-        renderGameDetail(game);
+        selectedGameId = game.id;
+        switchMainGame(game);
     });
     return col;
 }
 
-// 页面加载时默认显示第一个游戏详情
+// 页面加载时默认显示第一个游戏
 function renderDefaultGameDetail() {
     if (games.length > 0) {
         selectedGameId = games[0].id;
