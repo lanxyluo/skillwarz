@@ -9,9 +9,9 @@ const games = [
     },
     {
         id: 1,
-        name: "Space Invaders",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Space+Invaders",
-        iframeUrl: "https://example.com/space-invaders",
+        name: "Blazing Blades",
+        thumbnail: "images/uyiznua.jpg",
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/UYiznUAya",
         category: "action"
     },
     {
