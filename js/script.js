@@ -175,18 +175,52 @@ function displayGames(gamesToShow) {
     });
 }
 
-// 渲染主展示区（iframe+大封面+按钮）
-function renderMainGameArea(game) {
+// 渲染主展示区：介绍卡片
+function renderMainGameIntro(game) {
     let html = `<div class='main-game-card d-flex flex-row align-items-center justify-content-between mx-auto bg-dark text-light p-4 rounded-4 shadow-lg mb-4' style='max-width:1100px;'>`;
     html += `<div class='main-game-content flex-grow-1 pe-4'>`;
     html += `<h1 class='main-game-title mb-3'>${game.name}</h1>`;
+    html += `<p class='main-game-desc mb-4'>${game.description || ''}</p>`;
     html += `<div class='mb-3'><button class='btn btn-featured-play btn-lg px-5 py-3 fw-bold' id='mainPlayBtn'><i class='fas fa-play me-2'></i>PLAY GAME</button></div>`;
     html += `</div>`;
     html += `<div class='main-game-img-wrap text-center'>`;
     html += `<img src='${game.thumbnail}' alt='${game.name}' class='main-game-img rounded-circle shadow' style='width:200px;height:200px;object-fit:cover;border:6px solid #28a745;'>`;
     html += `</div></div>`;
-    html += `<div class='main-game-iframe-container mt-4'><iframe src='${game.iframeUrl}' frameborder='0' allowfullscreen style='width:100%;height:480px;border-radius:1rem;'></iframe></div>`;
     document.getElementById('main-game-content').innerHTML = html;
+    // 绑定PLAY GAME按钮事件
+    document.getElementById('mainPlayBtn').onclick = function() {
+        renderMainGameIframe(game);
+    };
+}
+// 渲染主展示区：iframe游玩区
+function renderMainGameIframe(game) {
+    let html = `<div class='main-game-iframe-area bg-dark text-light p-4 rounded-4 shadow-lg mb-4' style='max-width:1100px;margin:0 auto;'>`;
+    html += `<div class='d-flex justify-content-between align-items-center mb-3'>`;
+    html += `<h2 class='mb-0'>${game.name}</h2>`;
+    html += `<button class='btn btn-outline-light' id='backToIntroBtn'><i class='fas fa-arrow-left me-2'></i>Back</button>`;
+    html += `</div>`;
+    html += `<div class='main-game-iframe-container'><iframe src='${game.iframeUrl}' frameborder='0' allowfullscreen style='width:100%;height:480px;border-radius:1rem;'></iframe></div>`;
+    html += `</div>`;
+    document.getElementById('main-game-content').innerHTML = html;
+    // 绑定返回按钮事件
+    document.getElementById('backToIntroBtn').onclick = function() {
+        renderMainGameIntro(game);
+    };
+}
+// 切换主展示区和介绍区（始终先显示介绍卡片）
+function switchMainGame(game) {
+    renderMainGameIntro(game);
+    renderMainGameInfoArea(game);
+}
+// 页面加载时默认显示第一个游戏介绍卡片
+function renderDefaultMainGame() {
+    if (games.length > 0) {
+        selectedGameId = games[0].id;
+        switchMainGame(games[0]);
+    } else {
+        document.getElementById('main-game-content').innerHTML = '<div class="text-center text-muted">No game selected.</div>';
+        document.getElementById('main-game-info-content').innerHTML = '';
+    }
 }
 
 // 渲染主介绍区
@@ -202,23 +236,6 @@ function renderMainGameInfoArea(game) {
     if (game.howToPlay) html += `<p class='mb-2'><strong>How to Play:</strong> ${game.howToPlay}</p>`;
     html += `</div>`;
     document.getElementById('main-game-info-content').innerHTML = html;
-}
-
-// 切换主展示区和介绍区
-function switchMainGame(game) {
-    renderMainGameArea(game);
-    renderMainGameInfoArea(game);
-}
-
-// 页面加载时默认显示第一个游戏
-function renderDefaultMainGame() {
-    if (games.length > 0) {
-        selectedGameId = games[0].id;
-        switchMainGame(games[0]);
-    } else {
-        document.getElementById('main-game-content').innerHTML = '<div class="text-center text-muted">No game selected.</div>';
-        document.getElementById('main-game-info-content').innerHTML = '';
-    }
 }
 
 // 修改createGameCard，点击卡片时切换主展示区
