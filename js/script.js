@@ -112,10 +112,11 @@ const games = [
 // DOM Elements
 const gamesGrid = document.getElementById('games-grid');
 const categoryButtons = document.querySelectorAll('.category-btn');
-const gameModal = document.getElementById('gameModal');
-const gameModalTitle = document.getElementById('gameModalTitle');
-const gameIframe = document.getElementById('gameIframe');
-const fullscreenBtn = document.getElementById('fullscreenBtn');
+// 移除modal相关DOM元素
+// const gameModal = document.getElementById('gameModal');
+// const gameModalTitle = document.getElementById('gameModalTitle');
+// const gameIframe = document.getElementById('gameIframe');
+// const fullscreenBtn = document.getElementById('fullscreenBtn');
 
 // Current filter
 let currentCategory = 'all';
@@ -130,19 +131,13 @@ document.addEventListener('DOMContentLoaded', function() {
     setupSmoothScrolling();
     // 新增：默认显示第一个游戏详情
     renderDefaultGameDetail();
-    // 新增：主推SkillWarz按钮事件
+    // 移除主推SkillWarz按钮弹窗事件，改为首页内切换
     const playSkillWarzBtn = document.getElementById('playSkillWarzBtn');
     if (playSkillWarzBtn) {
         playSkillWarzBtn.addEventListener('click', function() {
             // SkillWarz游戏信息
-            const skillwarzGame = {
-                name: "SkillWarz",
-                iframeUrl: "https://www.crazygames.com/embed/skillwarz"
-            };
-            gameModalTitle.textContent = skillwarzGame.name;
-            gameIframe.src = skillwarzGame.iframeUrl;
-            const modal = new bootstrap.Modal(gameModal);
-            modal.show();
+            const skillwarzGame = games.find(g => g.name === "SkillWarz");
+            if (skillwarzGame) renderGameDetail(skillwarzGame);
         });
     }
 });
@@ -247,20 +242,8 @@ function setupEventListeners() {
             filterGames(category);
         });
     });
-    
-    // Fullscreen button
-    fullscreenBtn.addEventListener('click', toggleFullscreen);
-    
-    // Modal close event
-    gameModal.addEventListener('hidden.bs.modal', function () {
-        gameIframe.src = '';
-    });
-    
-    // Keyboard shortcuts
-    document.addEventListener('keydown', handleKeyboardShortcuts);
-    
-    // Mobile touch events
-    setupMobileTouchEvents();
+    // 移除fullscreenBtn、modal相关事件
+    // Keyboard shortcuts、Mobile touch等可保留
 }
 
 // Filter games by category
@@ -297,19 +280,19 @@ function toggleFullscreen() {
 // Handle keyboard shortcuts
 function handleKeyboardShortcuts(e) {
     // ESC key to close modal
-    if (e.key === 'Escape') {
-        const modal = bootstrap.Modal.getInstance(gameModal);
-        if (modal) {
-            modal.hide();
-        }
-    }
+    // if (e.key === 'Escape') {
+    //     const modal = bootstrap.Modal.getInstance(gameModal);
+    //     if (modal) {
+    //         modal.hide();
+    //     }
+    // }
     
     // F key for fullscreen (when modal is open)
-    if (e.key === 'f' || e.key === 'F') {
-        if (gameModal.classList.contains('show')) {
-            toggleFullscreen();
-        }
-    }
+    // if (e.key === 'f' || e.key === 'F') {
+    //     if (gameModal.classList.contains('show')) {
+    //         toggleFullscreen();
+    //     }
+    // }
 }
 
 // Setup mobile touch events
@@ -482,11 +465,11 @@ function trackGamePlay(gameId, gameName) {
 
 // Add tracking to game modal
 function addGameTracking() {
-    gameModal.addEventListener('shown.bs.modal', function() {
-        const gameId = this.querySelector('#gameIframe').dataset.gameId;
-        const gameName = this.querySelector('#gameModalTitle').textContent;
-        trackGamePlay(gameId, gameName);
-    });
+    // gameModal.addEventListener('shown.bs.modal', function() {
+    //     const gameId = this.querySelector('#gameIframe').dataset.gameId;
+    //     const gameName = this.querySelector('#gameModalTitle').textContent;
+    //     trackGamePlay(gameId, gameName);
+    // });
 }
 
 // Initialize tracking
