@@ -12,14 +12,30 @@ const games = [
         name: "Blazing Blades",
         thumbnail: "images/uyiznua.jpg",
         iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/UYiznUAya",
-        category: "action"
+        category: "action",
+        description: "Blazing Blades is a fast-paced action game. Compete for the highest score in this exciting online game! No download required, play instantly in your browser.",
+        features: [
+            "Seamless browser gameplay",
+            "Instant action, no installation",
+            "Responsive controls",
+            "Compete for high scores"
+        ],
+        howToPlay: "Use your keyboard or touch controls to play. Follow the in-game instructions for specific actions and objectives. Try to achieve the highest score possible!"
     },
     {
         id: 2,
         name: "Heartstop Tour",
         thumbnail: "images/heartstop_tour.jpg",
         iframeUrl: "https://itch.io/embed/3663792",
-        category: "strategy"
+        category: "strategy",
+        description: "Heartstop Tour is a unique strategy game. Plan your moves and outsmart your opponents!",
+        features: [
+            "Strategic gameplay",
+            "Challenging levels",
+            "Immersive story",
+            "Beautiful visuals"
+        ],
+        howToPlay: "Use your mouse or touch to interact. Read the in-game instructions for each level and plan your strategy to win!"
     },
     {
         id: 3,
@@ -188,18 +204,32 @@ function createGameCard(game) {
     return col;
 }
 
-// Open game modal
+// 修改openGameModal函数，弹窗中动态展示详情内容
 function openGameModal(game) {
     gameModalTitle.textContent = game.name;
-    gameIframe.src = game.iframeUrl;
-    
+    // 新增：填充详情内容
+    let detailsHtml = `<div class='game-details-modal mb-3'>`;
+    if (game.description) {
+        detailsHtml += `<p class='mb-2'><strong>Description:</strong> ${game.description}</p>`;
+    }
+    if (game.features && game.features.length) {
+        detailsHtml += `<div class='mb-2'><strong>Features:</strong><ul class='mb-1'>`;
+        game.features.forEach(f => { detailsHtml += `<li>${f}</li>`; });
+        detailsHtml += `</ul></div>`;
+    }
+    if (game.howToPlay) {
+        detailsHtml += `<p class='mb-2'><strong>How to Play:</strong> ${game.howToPlay}</p>`;
+    }
+    detailsHtml += `</div>`;
+    // 插入到modal-body顶部
+    const modalBody = gameModal.querySelector('.modal-body');
+    modalBody.innerHTML = detailsHtml + `<div class='game-iframe-container'><iframe id='gameIframe' src='${game.iframeUrl}' frameborder='0' allowfullscreen></iframe></div>`;
+    // 重新获取iframe引用
+    window.gameIframe = modalBody.querySelector('#gameIframe');
     const modal = new bootstrap.Modal(gameModal);
     modal.show();
-    
-    // Add loading state
-    gameIframe.onload = function() {
-        // Remove loading state if needed
-    };
+    // 加载完成事件
+    window.gameIframe.onload = function() {};
 }
 
 // Setup event listeners
