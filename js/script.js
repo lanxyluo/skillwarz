@@ -229,10 +229,10 @@ function renderDefaultMainGame() {
     }
 }
 
-// 渲染主介绍区
+// 渲染主介绍区（只在底部显示）
 function renderMainGameInfoArea(game) {
     let html = `<div class='main-game-info-area bg-dark text-light p-4 rounded-4 shadow-lg mb-4' style='max-width:1100px;margin:0 auto;'>`;
-    html += `<h3 class='mb-3'>About ${game.name}</h3>`;
+    html += `<h3 class='mb-3' style='color:#28a745;font-weight:700;'>About ${game.name}</h3>`;
     if (game.description) html += `<p class='mb-2'>${game.description}</p>`;
     if (game.features && game.features.length) {
         html += `<div class='mb-2'><strong>Features:</strong><ul class='mb-1'>`;
