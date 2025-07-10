@@ -67,14 +67,6 @@
             <div id="main-game-content"></div>
         </div>
     </section>
-    <!-- 页面主内容与底部介绍区之间的视觉间距 -->
-    <div style="height: 80px;"></div>
-    <!-- Main Game Info Area (介绍区) 移动到底部 -->
-    <div id="main-game-info-area" class="main-game-info-area pb-4">
-        <div class="container">
-            <div id="main-game-info-content"></div>
-        </div>
-    </div>
 
     <!-- Games Section (卡片区) -->
     <section id="games" class="games-section py-5">
@@ -82,40 +74,30 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="section-title text-center mb-5">All Games</h2>
-                    
                     <!-- Category Filter -->
                     <div class="category-filter text-center mb-4">
-                        <button class="btn btn-outline-primary me-2 mb-2 category-btn active" data-category="all">
-                            All Games
-                        </button>
-                        <button class="btn btn-outline-primary me-2 mb-2 category-btn" data-category="action">
-                            Action
-                        </button>
-                        <button class="btn btn-outline-primary me-2 mb-2 category-btn" data-category="strategy">
-                            Strategy
-                        </button>
-                        <button class="btn btn-outline-primary me-2 mb-2 category-btn" data-category="casual">
-                            Casual
-                        </button>
-                        <button class="btn btn-outline-primary me-2 mb-2 category-btn" data-category="racing">
-                            Racing
-                        </button>
+                        <button class="btn btn-outline-primary me-2 mb-2 category-btn active" data-category="all">All Games</button>
+                        <button class="btn btn-outline-primary me-2 mb-2 category-btn" data-category="action">Action</button>
+                        <button class="btn btn-outline-primary me-2 mb-2 category-btn" data-category="strategy">Strategy</button>
+                        <button class="btn btn-outline-primary me-2 mb-2 category-btn" data-category="casual">Casual</button>
+                        <button class="btn btn-outline-primary me-2 mb-2 category-btn" data-category="racing">Racing</button>
                     </div>
-                    
                     <!-- Games Grid -->
-                    <div class="row" id="games-grid">
-                        <!-- Games will be dynamically loaded here -->
-                    </div>
-                </div>
-            </div>
-            <!-- 新增：游戏详情和iframe展示区 -->
-            <div class="row mt-5">
-                <div class="col-12">
-                    <div id="game-detail-area"></div>
+                    <div class="row" id="games-grid"></div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- 大间距分隔 -->
+    <div style="height: 200px;"></div>
+
+    <!-- Main Game Info Area (介绍区) 只在页面底部 -->
+    <div id="main-game-info-area" class="main-game-info-area pb-4">
+        <div class="container">
+            <div id="main-game-info-content"></div>
+        </div>
+    </div>
 
     <!-- Features Section -->
     <section id="features" class="features-section py-5 bg-dark">
