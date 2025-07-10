@@ -217,6 +217,11 @@ function renderMainGameIframe(game) {
 function switchMainGame(game) {
     renderMainGameIntro(game);
     renderMainGameInfoArea(game);
+    // 平滑滚动到主卡片区域顶部
+    const mainGameArea = document.getElementById('main-game-area');
+    if (mainGameArea) {
+        mainGameArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 // 页面加载时默认显示第一个游戏介绍卡片
 function renderDefaultMainGame() {
