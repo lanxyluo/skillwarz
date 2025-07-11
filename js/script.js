@@ -163,20 +163,16 @@ function loadGames(category) {
 // Display games in the grid
 function displayGames(gamesToShow) {
     gamesGrid.innerHTML = '';
-    
     if (gamesToShow.length === 0) {
         gamesGrid.innerHTML = `
-            <div class="col-12 text-center">
-                <div class="no-games">
-                    <i class="fas fa-gamepad fa-3x text-muted mb-3"></i>
-                    <h4 class="text-muted">No games found in this category</h4>
-                    <p class="text-muted">Try selecting a different category or check back later for new games.</p>
-                </div>
+            <div class="no-games text-center w-100">
+                <i class="fas fa-gamepad fa-3x text-muted mb-3"></i>
+                <h4 class="text-muted">No games found in this category</h4>
+                <p class="text-muted">Try selecting a different category or check back later for new games.</p>
             </div>
         `;
         return;
     }
-    
     gamesToShow.forEach(game => {
         const gameCard = createGameCard(game);
         gamesGrid.appendChild(gameCard);
@@ -249,32 +245,29 @@ function renderMainGameInfoArea(game) {
     document.getElementById('main-game-info-content').innerHTML = html;
 }
 
-// 修改createGameCard，点击卡片时切换主展示区
+// 修改createGameCard，直接返回.game-card元素
 function createGameCard(game) {
-    const col = document.createElement('div');
-    col.className = 'col-lg-4 col-md-6 col-sm-12';
-    col.innerHTML = `
-        <div class="game-card" data-game-id="${game.id}">
-            <div class="game-thumbnail">
-                <img src="${game.thumbnail}" alt="${game.name}" loading="lazy">
-                <div class="game-overlay">
-                    <button class="play-btn">
-                        <i class="fas fa-play me-2"></i>Play Now
-                    </button>
-                </div>
-            </div>
-            <div class="game-info">
-                <h3 class="game-title">${game.name}</h3>
-                <span class="game-category">${capitalizeFirst(game.category)}</span>
+    const card = document.createElement('div');
+    card.className = 'game-card';
+    card.innerHTML = `
+        <div class="game-thumbnail">
+            <img src="${game.thumbnail}" alt="${game.name}" loading="lazy">
+            <div class="game-overlay">
+                <button class="play-btn">
+                    <i class="fas fa-play me-2"></i>Play Now
+                </button>
             </div>
         </div>
+        <div class="game-info">
+            <h3 class="game-title">${game.name}</h3>
+            <span class="game-category">${capitalizeFirst(game.category)}</span>
+        </div>
     `;
-    // 点击卡片时切换主展示区
-    col.querySelector('.game-card').addEventListener('click', () => {
+    card.addEventListener('click', () => {
         selectedGameId = game.id;
         switchMainGame(game);
     });
-    return col;
+    return card;
 }
 
 // 页面加载时默认显示第一个游戏
