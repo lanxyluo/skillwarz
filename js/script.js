@@ -47,10 +47,18 @@ const games = [
     },
     {
         id: 3,
-        name: "Bubble Pop",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Bubble+Pop",
-        iframeUrl: "https://example.com/bubble-pop",
-        category: "casual"
+        name: "Fruit Chop",
+        thumbnail: "images/fruit_chop.jpg",
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r",
+        category: "casual",
+        description: "Fruit Chop is a fast-paced and addictive HTML5 arcade game. Slice as many fruits as you can while avoiding the bombs!",
+        features: [
+            "Simple swipe controls, easy to play",
+            "Colorful fruit graphics and juicy effects",
+            "Increasing speed and challenge",
+            "Compete for the highest score with friends"
+        ],
+        howToPlay: "Swipe across the screen to slice fruits. Avoid slicing bombs. The more fruits you chop, the higher your score!"
     },
     {
         id: 4,
@@ -91,17 +99,25 @@ const games = [
     },
     {
         id: 7,
+        name: "Dodge Bot",
+        thumbnail: "images/dodge_bot.jpg",
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/SJ2OGpIn",
+        category: "casual",
+        description: "Dodge Bot is a reflex-based HTML5 game where you control a robot to dodge incoming obstacles. How long can you survive?",
+        features: [
+            "One-touch controls, easy to learn",
+            "Minimalist graphics and smooth animations",
+            "Endless gameplay with increasing difficulty",
+            "Challenge your friends for the best score"
+        ],
+        howToPlay: "Tap or click to change the robot's direction. Avoid all obstacles and survive as long as possible!"
+    },
+    {
+        id: 8,
         name: "Puzzle Quest",
         thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Puzzle+Quest",
         iframeUrl: "https://example.com/puzzle-quest",
         category: "casual"
-    },
-    {
-        id: 8,
-        name: "Drift Racing",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Drift+Racing",
-        iframeUrl: "https://example.com/drift-racing",
-        category: "racing"
     },
     {
         id: 9,
@@ -135,10 +151,18 @@ const games = [
     },
     {
         id: 11,
-        name: "Candy Crush",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Candy+Crush",
-        iframeUrl: "https://example.com/candy-crush",
-        category: "casual"
+        name: "Groovy Ski",
+        thumbnail: "images/groovy_ski.jpg",
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/EJaG_JfW9l",
+        category: "casual",
+        description: "Groovy Ski is a fun and challenging HTML5 skiing game. Guide your skier down the slope, avoid obstacles, and collect coins!",
+        features: [
+            "Easy tap controls for quick turns",
+            "Vibrant graphics and groovy music",
+            "Endless slopes with increasing speed",
+            "Compete for the highest score with friends"
+        ],
+        howToPlay: "Tap or click to change direction. Avoid obstacles and collect as many coins as you can for a high score!"
     },
     {
         id: 12,
