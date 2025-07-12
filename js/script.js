@@ -76,10 +76,18 @@ const games = [
     },
     {
         id: 6,
-        name: "Tower Defense",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Tower+Defense",
-        iframeUrl: "https://example.com/tower-defense",
-        category: "strategy"
+        name: "Bubble Wipeout",
+        thumbnail: "images/bubble_wipeout.jpg",
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/H1AN6fkwqJ7",
+        category: "strategy",
+        description: "Bubble Wipeout is a colorful and addictive HTML5 puzzle game. Match and pop bubbles to clear the board and achieve the highest score!",
+        features: [
+            "Simple and intuitive controls",
+            "Vibrant graphics and fun sound effects",
+            "Challenging levels with increasing difficulty",
+            "Compete for high scores with friends"
+        ],
+        howToPlay: "Tap or click to shoot bubbles. Match three or more bubbles of the same color to pop them. Clear all bubbles to win the level!"
     },
     {
         id: 7,
