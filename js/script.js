@@ -120,10 +120,18 @@ const games = [
     },
     {
         id: 10,
-        name: "Civilization",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Civilization",
-        iframeUrl: "https://example.com/civilization",
-        category: "strategy"
+        name: "Ludo With Friends",
+        thumbnail: "images/ludo_with_friends.jpg",
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/SkhljT2fdgb",
+        category: "strategy",
+        description: "Ludo With Friends is a classic multiplayer board game brought to life in HTML5. Roll the dice, move your tokens, and race to get all your pieces home before your opponents!",
+        features: [
+            "Classic ludo gameplay with modern graphics",
+            "Play with friends or against AI",
+            "Smooth animations and engaging sound effects",
+            "Supports 2-4 players in a single game"
+        ],
+        howToPlay: "Roll the dice and move your tokens around the board. Get all your tokens to the home area before your opponents to win!"
     },
     {
         id: 11,
