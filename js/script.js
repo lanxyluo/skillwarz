@@ -65,7 +65,7 @@ const games = [
         name: "Racing Legends",
         thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Racing+Legends",
         iframeUrl: "https://example.com/racing-legends",
-        category: "racing"
+        category: "shooting"
     },
     {
         id: 5,
@@ -114,10 +114,10 @@ const games = [
     },
     {
         id: 8,
-        name: "Puzzle Quest",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Puzzle+Quest",
-        iframeUrl: "https://example.com/puzzle-quest",
-        category: "casual"
+        name: "Drift Racing",
+        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Drift+Racing",
+        iframeUrl: "https://example.com/drift-racing",
+        category: "shooting"
     },
     {
         id: 9,
@@ -169,7 +169,7 @@ const games = [
         name: "Formula 1",
         thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Formula+1",
         iframeUrl: "https://example.com/formula-1",
-        category: "racing"
+        category: "shooting"
     }
 ];
 
