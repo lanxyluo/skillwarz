@@ -97,10 +97,18 @@ const games = [
     },
     {
         id: 9,
-        name: "Ninja Warrior",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Ninja+Warrior",
-        iframeUrl: "https://example.com/ninja-warrior",
-        category: "action"
+        name: "Space Rescue Mission",
+        thumbnail: "images/space_rescue_mission.jpg",
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/ryN9EGAQa",
+        category: "action",
+        description: "Space Rescue Mission is an exciting HTML5 arcade game where you pilot a spaceship to rescue stranded astronauts while avoiding obstacles and enemies. Test your reflexes and strategy in the vastness of space!",
+        features: [
+            "Intuitive one-touch controls，easy to play",
+            "Vivid space-themed graphics and sound effects",
+            "Challenging levels with increasing difficulty",
+            "Compete for high scores with friends"
+        ],
+        howToPlay: "Tap or click to move your spaceship. Avoid obstacles, collect power-ups, and rescue as many astronauts as possible to achieve the highest score!"
     },
     {
         id: 10,
