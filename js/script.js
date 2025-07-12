@@ -61,10 +61,18 @@ const games = [
     },
     {
         id: 5,
-        name: "Zombie Survival",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Zombie+Survival",
-        iframeUrl: "https://example.com/zombie-survival",
-        category: "action"
+        name: "Fruit Adventure",
+        thumbnail: "images/fruit_adventure.jpg",
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/B1fSpMkP51m",
+        category: "action",
+        description: "Fruit Adventure is a fast-paced HTML5 arcade game where you control a cute fruit character, dodging obstacles and collecting bonuses. Challenge your reflexes and aim for the highest score!",
+        features: [
+            "Simple one-touch controls，easy to pick up and play",
+            "Colorful graphics and lively music",
+            "Endless levels with increasing difficulty",
+            "Compete for the best score with friends"
+        ],
+        howToPlay: "Tap or click to jump. Avoid obstacles and collect as many bonuses as possible. The longer you survive, the higher your score!"
     },
     {
         id: 6,
