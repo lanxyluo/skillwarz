@@ -32,18 +32,18 @@ const games = [
     },
     {
         id: 2,
-        name: "Heartstop Tour",
-        thumbnail: "images/heartstop_tour.jpg",
-        iframeUrl: "https://itch.io/embed/3663792",
+        name: "Carrom Hero",
+        thumbnail: "images/carrom_hero.jpg",
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/H1Hgyn6XqAS",
         category: "strategy",
-        description: "Heartstop Tour is a unique strategy game. Plan your moves and outsmart your opponents!",
+        description: "Carrom Hero is a fun and challenging HTML5 board game that brings the classic carrom experience to your screen. Aim, strike, and pocket all your pieces before your opponent!",
         features: [
-            "Strategic gameplay",
-            "Challenging levels",
-            "Immersive story",
-            "Beautiful visuals"
+            "Realistic carrom physics and smooth controls",
+            "Multiple levels and increasing difficulty",
+            "Play against AI or challenge your friends",
+            "Colorful graphics and engaging sound effects"
         ],
-        howToPlay: "Use your mouse or touch to interact. Read the in-game instructions for each level and plan your strategy to win!"
+        howToPlay: "Drag and release to aim and strike the striker. Pocket all your carrom pieces before your opponent to win the game!"
     },
     {
         id: 3,
