@@ -17,18 +17,18 @@ const games = [
     },
     {
         id: 1,
-        name: "Blazing Blades",
-        thumbnail: "images/uyiznua.jpg",
-        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/UYiznUAya",
+        name: "Saloon Robbery",
+        thumbnail: "images/saloon_robbery.jpg", // 如无图片请上传，暂用占位图
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/SJ8X6zyPcyX",
         category: "action",
-        description: "Blazing Blades is a fast-paced action game. Compete for the highest score in this exciting online game! No download required, play instantly in your browser.",
+        description: "Saloon Robbery is a thrilling action game set in the wild west. Outsmart the guards, grab the loot, and escape the saloon without getting caught!",
         features: [
-            "Seamless browser gameplay",
-            "Instant action, no installation",
-            "Responsive controls",
-            "Compete for high scores"
+            "Exciting wild west robbery theme",
+            "Challenging levels and clever enemies",
+            "Simple tap or click controls",
+            "No download, play instantly in your browser"
         ],
-        howToPlay: "Use your keyboard or touch controls to play. Follow the in-game instructions for specific actions and objectives. Try to achieve the highest score possible!"
+        howToPlay: "Tap or click to move your character. Avoid the guards, collect all the loot, and find your way out of the saloon. Plan your moves carefully to avoid being caught!"
     },
     {
         id: 2,
@@ -200,6 +200,21 @@ const games = [
             "No download, play instantly in your browser"
         ],
         howToPlay: "Take turns placing your X or O on the grid. The first player to get three in a row—horizontally, vertically, or diagonally—wins the game!"
+    },
+    {
+        id: 15,
+        name: "Bottle Shoot",
+        thumbnail: "images/bottle_shoot.jpg", // 如无图片请上传，暂用占位图
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/B1fSpMkP51m",
+        category: "action",
+        description: "Bottle Shoot is a fast-paced action game where your goal is to break as many bottles as possible with limited shots. Test your aim and reflexes in this addictive challenge!",
+        features: [
+            "Simple tap or click controls",
+            "Realistic bottle-breaking physics",
+            "Challenging levels with increasing difficulty",
+            "No download, play instantly in your browser"
+        ],
+        howToPlay: "Tap or click to shoot at the bottles. Break all the bottles with the given number of shots to clear each level. Aim carefully and try to achieve the highest score!"
     }
 ];
 
