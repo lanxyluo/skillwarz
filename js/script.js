@@ -215,6 +215,36 @@ const games = [
             "No download, play instantly in your browser"
         ],
         howToPlay: "Tap or click to shoot at the bottles. Break all the bottles with the given number of shots to clear each level. Aim carefully and try to achieve the highest score!"
+    },
+    {
+        id: 16,
+        name: "Blazing Blades",
+        thumbnail: "images/blazing_blades.jpg", // 如无图片请上传，暂用占位图
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/UYiznUAya",
+        category: "action",
+        description: "Blazing Blades is a fast-paced action game. Compete for the highest score in this exciting online game! No download required, play instantly in your browser.",
+        features: [
+            "Seamless browser gameplay",
+            "Instant action, no installation",
+            "Responsive controls",
+            "Compete for high scores"
+        ],
+        howToPlay: "Use your keyboard or touch controls to play. Follow the in-game instructions for specific actions and objectives. Try to achieve the highest score possible!"
+    },
+    {
+        id: 17,
+        name: "Jimbo Jump",
+        thumbnail: "images/jimbo_jump.jpg", // 如无图片请上传，暂用占位图
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/BkXW1a__",
+        category: "action",
+        description: "Jimbo Jump is a fast-paced action platformer where you help Jimbo leap from platform to platform, avoiding obstacles and collecting coins. How high can you go?",
+        features: [
+            "Simple one-tap controls",
+            "Endless jumping action",
+            "Challenging obstacles and power-ups",
+            "No download, play instantly in your browser"
+        ],
+        howToPlay: "Tap or click to make Jimbo jump. Time your jumps to land on platforms, avoid obstacles, and collect as many coins as possible for a high score!"
     }
 ];
 
