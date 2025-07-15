@@ -245,6 +245,21 @@ const games = [
             "No download, play instantly in your browser"
         ],
         howToPlay: "Tap or click to make Jimbo jump. Time your jumps to land on platforms, avoid obstacles, and collect as many coins as possible for a high score!"
+    },
+    {
+        id: 18,
+        name: "City Cricket",
+        thumbnail: "images/city_cricket.jpg", // 如无图片请上传，暂用占位图
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/HJP4afkvqJQ",
+        category: "strategy",
+        description: "City Cricket is a strategic sports game where you lead your team to victory in exciting city cricket matches. Plan your shots, outsmart your opponents, and aim for the highest score!",
+        features: [
+            "Realistic city cricket experience",
+            "Strategic gameplay and shot selection",
+            "Challenging AI opponents",
+            "No download, play instantly in your browser"
+        ],
+        howToPlay: "Tap or click to play your shots. Time your swings, choose your direction, and score as many runs as possible. Outsmart the bowler and lead your team to victory!"
     }
 ];
 
