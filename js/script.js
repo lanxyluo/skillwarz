@@ -170,6 +170,36 @@ const games = [
         thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Formula+1",
         iframeUrl: "https://example.com/formula-1",
         category: "shooting"
+    },
+    {
+        id: 13,
+        name: "Soul Roulette",
+        thumbnail: "images/soul_roulette.jpg", // 如无图片请上传，暂用占位图
+        iframeUrl: "https://itch.io/embed/3709931",
+        category: "strategy",
+        description: "Soul Roulette is a unique strategy game where you test your luck and tactics in a mysterious roulette of souls. Outsmart your opponents and survive the odds!",
+        features: [
+            "Innovative roulette-based strategy gameplay",
+            "Atmospheric visuals and sound design",
+            "Multiple endings and replayability",
+            "No download, play instantly in your browser"
+        ],
+        howToPlay: "Spin the roulette and make strategic choices to survive. Each round presents new risks and opportunities. Use your wits to outlast your opponents and achieve the best ending!"
+    },
+    {
+        id: 14,
+        name: "Tic Tac Toe",
+        thumbnail: "images/tic_tac_toe.jpg", // 如无图片请上传，暂用占位图
+        iframeUrl: "https://zv1y2i8p.play.gamezop.com/g/H1WmafkP9JQ",
+        category: "strategy",
+        description: "Tic Tac Toe is the classic strategy game you know and love! Challenge your friends or the computer in this timeless battle of Xs and Os.",
+        features: [
+            "Classic 3x3 grid gameplay",
+            "Play against friends or AI",
+            "Simple, intuitive controls",
+            "No download, play instantly in your browser"
+        ],
+        howToPlay: "Take turns placing your X or O on the grid. The first player to get three in a row—horizontally, vertically, or diagonally—wins the game!"
     }
 ];
 
