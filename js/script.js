@@ -62,10 +62,18 @@ const games = [
     },
     {
         id: 4,
-        name: "Racing Legends",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Racing+Legends",
-        iframeUrl: "https://example.com/racing-legends",
-        category: "puzzle"
+        name: "Ants Empire Evolve Sim",
+        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Puzzle+Master",
+        iframeUrl: "https://html5.gamedistribution.com/0358ad881309472b925f305df5e46f62/?gd_sdk_referrer_url=https://www.example.com/games/puzzle-master",
+        category: "puzzle",
+        description: "Puzzle Master is an engaging HTML5 puzzle game that challenges your logical thinking and problem-solving skills. Solve increasingly complex puzzles and unlock new levels!",
+        features: [
+            "Brain-teasing puzzle challenges",
+            "Multiple difficulty levels",
+            "Intuitive drag-and-drop controls",
+            "No download, play instantly in your browser"
+        ],
+        howToPlay: "Use your mouse or touch to drag and drop puzzle pieces. Arrange them correctly to solve each puzzle. Think strategically and plan your moves carefully!"
     },
     {
         id: 5,
@@ -114,10 +122,18 @@ const games = [
     },
     {
         id: 8,
-        name: "Drift Racing",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Drift+Racing",
-        iframeUrl: "https://example.com/drift-racing",
-        category: "puzzle"
+        name: "Italian Brainrot Survive Parkour",
+        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Logic+Quest",
+        iframeUrl: "https://html5.gamedistribution.com/5c5b89d12e404bf6a4979ae0c0c9a09c/?gd_sdk_referrer_url=https://www.example.com/games/logic-quest",
+        category: "puzzle",
+        description: "Logic Quest is a challenging HTML5 puzzle game that tests your analytical thinking and pattern recognition skills. Complete each level by solving intricate logic puzzles!",
+        features: [
+            "Complex logic puzzles and brain teasers",
+            "Progressive difficulty system",
+            "Smooth touch and mouse controls",
+            "No download, play instantly in your browser"
+        ],
+        howToPlay: "Analyze the puzzle patterns and use logical reasoning to find solutions. Click or tap to interact with puzzle elements. Each level requires different strategies!"
     },
     {
         id: 9,
@@ -166,10 +182,18 @@ const games = [
     },
     {
         id: 12,
-        name: "Formula 1",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Formula+1",
-        iframeUrl: "https://example.com/formula-1",
-        category: "puzzle"
+        name: "Summer Festivals Fashion",
+        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Mind+Bender",
+        iframeUrl: "https://html5.gamedistribution.com/10f0beef65fe40ccae23194fd95782a8/?gd_sdk_referrer_url=https://www.example.com/games/mind-bender",
+        category: "puzzle",
+        description: "Mind Bender is an innovative HTML5 puzzle game that pushes the boundaries of traditional puzzle solving. Experience unique challenges that will truly bend your mind!",
+        features: [
+            "Innovative puzzle mechanics",
+            "Unique visual and audio effects",
+            "Responsive design for all devices",
+            "No download, play instantly in your browser"
+        ],
+        howToPlay: "Explore the unique puzzle mechanics and discover new ways to solve challenges. Use your creativity and think outside the box to complete each mind-bending level!"
     },
     {
         id: 13,
