@@ -63,7 +63,7 @@ const games = [
     {
         id: 4,
         name: "Ants Empire Evolve Sim",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Puzzle+Master",
+        thumbnail: "images/Ants_Empire_Evolve_Sim.jpg",
         iframeUrl: "https://html5.gamedistribution.com/0358ad881309472b925f305df5e46f62/?gd_sdk_referrer_url=https://www.example.com/games/puzzle-master",
         category: "puzzle",
         description: "Puzzle Master is an engaging HTML5 puzzle game that challenges your logical thinking and problem-solving skills. Solve increasingly complex puzzles and unlock new levels!",
@@ -123,7 +123,7 @@ const games = [
     {
         id: 8,
         name: "Italian Brainrot Survive Parkour",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Logic+Quest",
+        thumbnail: "images/Italian_Brainrot_Survive_Parkour.jpg",
         iframeUrl: "https://html5.gamedistribution.com/5c5b89d12e404bf6a4979ae0c0c9a09c/?gd_sdk_referrer_url=https://www.example.com/games/logic-quest",
         category: "puzzle",
         description: "Logic Quest is a challenging HTML5 puzzle game that tests your analytical thinking and pattern recognition skills. Complete each level by solving intricate logic puzzles!",
@@ -183,7 +183,7 @@ const games = [
     {
         id: 12,
         name: "Summer Festivals Fashion",
-        thumbnail: "https://via.placeholder.com/300x200/28a745/ffffff?text=Mind+Bender",
+        thumbnail: "images/Summer_Festivals_Fashion.jpg",
         iframeUrl: "https://html5.gamedistribution.com/10f0beef65fe40ccae23194fd95782a8/?gd_sdk_referrer_url=https://www.example.com/games/mind-bender",
         category: "puzzle",
         description: "Mind Bender is an innovative HTML5 puzzle game that pushes the boundaries of traditional puzzle solving. Experience unique challenges that will truly bend your mind!",
@@ -284,6 +284,51 @@ const games = [
             "No download, play instantly in your browser"
         ],
         howToPlay: "Tap or click to play your shots. Time your swings, choose your direction, and score as many runs as possible. Outsmart the bowler and lead your team to victory!"
+    },
+    {
+        id: 19,
+        name: "Puzzle Adventure",
+        thumbnail: "images/Puzzle_Adventure.jpg",
+        iframeUrl: "https://html5.gamedistribution.com/c77c8b1ffef242609915d126535b0ca9/?gd_sdk_referrer_url=https://www.example.com/games/puzzle-adventure",
+        category: "puzzle",
+        description: "Puzzle Adventure is an exciting HTML5 puzzle game that combines brain-teasing challenges with adventure elements. Solve puzzles to progress through mysterious worlds and unlock new levels!",
+        features: [
+            "Engaging puzzle mechanics with adventure elements",
+            "Multiple worlds and environments to explore",
+            "Progressive difficulty system",
+            "No download, play instantly in your browser"
+        ],
+        howToPlay: "Use your mouse or touch to interact with puzzle elements. Think strategically to solve each challenge and advance through the adventure. Each level presents unique puzzles that require creative thinking!"
+    },
+    {
+        id: 20,
+        name: "Brain Training Challenge",
+        thumbnail: "images/Brain_Training_Challenge.jpg",
+        iframeUrl: "https://html5.gamedistribution.com/09fa640bb18d4853842e529b615a7dad/?gd_sdk_referrer_url=https://www.example.com/games/brain-training-challenge",
+        category: "puzzle",
+        description: "Brain Training Challenge is a comprehensive puzzle game designed to enhance your cognitive skills. Test your memory, logic, and problem-solving abilities with various brain-training exercises!",
+        features: [
+            "Multiple brain training exercises",
+            "Memory and logic challenges",
+            "Progress tracking system",
+            "No download, play instantly in your browser"
+        ],
+        howToPlay: "Complete various brain training exercises by following the on-screen instructions. Test your memory, solve logic puzzles, and challenge your cognitive abilities. Track your progress and improve your skills!"
+    },
+    {
+        id: 21,
+        name: "Mind Puzzle Quest",
+        thumbnail: "images/Mind_Puzzle_Quest.jpg",
+        iframeUrl: "https://html5.gamedistribution.com/f29467fbb55f4f4fbe4f3263a827195f/?gd_sdk_referrer_url=https://www.example.com/games/mind-puzzle-quest",
+        category: "puzzle",
+        description: "Mind Puzzle Quest is an innovative puzzle game that pushes the boundaries of traditional puzzle solving. Experience unique challenges that will truly test your mental agility and creativity!",
+        features: [
+            "Innovative puzzle mechanics",
+            "Unique visual and audio effects",
+            "Responsive design for all devices",
+            "No download, play instantly in your browser"
+        ],
+        howToPlay: "Explore the unique puzzle mechanics and discover new ways to solve challenges. Use your creativity and think outside the box to complete each mind-bending level. Each puzzle requires a different approach!"
     }
 ];
 
