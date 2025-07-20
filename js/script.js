@@ -526,12 +526,13 @@ function slugify(str) {
     return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
-// 切换主游戏时更新URL和结构化数据
+// 切换主游戏时更新URL和结构化数据和SEO meta
 function updateUrlAndSchema(game) {
     const slug = slugify(game.name);
     const url = `/games/${slug}`;
     window.history.pushState({}, '', url);
     injectGameSchema(game, url);
+    injectGameSeoMeta(game);
 }
 
 // 动态注入VideoGame结构化数据
@@ -555,6 +556,28 @@ function injectGameSchema(game, url) {
     script.id = 'game-schema';
     script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
+}
+
+// 动态注入SEO title和meta description
+function injectGameSeoMeta(game) {
+    // Title
+    document.title = `${game.name} - Play Free ${capitalizeFirst(game.category)} Game Online | SkillWarz`;
+    // Meta description
+    let desc = document.querySelector('meta[name="description"]');
+    if (!desc) {
+        desc = document.createElement('meta');
+        desc.name = 'description';
+        document.head.appendChild(desc);
+    }
+    desc.content = game.description ? `Play ${game.name} free online on SkillWarz. ${game.description} No download required!` : `Play ${game.name} free online on SkillWarz. No download required!`;
+    // Canonical
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.rel = 'canonical';
+        document.head.appendChild(canonical);
+    }
+    canonical.href = window.location.origin + `/games/${slugify(game.name)}`;
 }
 
 // 页面加载时根据URL自动路由
