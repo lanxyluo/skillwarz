@@ -482,7 +482,7 @@ function createGameCard(game) {
     card.className = 'game-card';
     card.innerHTML = `
         <div class="game-thumbnail">
-            <img src="${game.thumbnail}" alt="${game.name}" loading="lazy">
+            <img src="${game.thumbnail}" alt="${game.name} - ${capitalizeFirst(game.category)} Game Screenshot" loading="lazy">
             <div class="game-overlay">
                 <button class="play-btn">
                     <i class="fas fa-play me-2"></i>Play Now
@@ -497,9 +497,78 @@ function createGameCard(game) {
     card.addEventListener('click', () => {
         selectedGameId = game.id;
         switchMainGame(game);
+        updateUrlAndSchema(game);
     });
     return card;
 }
+
+// 路由：支持 /games/:slug
+window.addEventListener('popstate', function() {
+    const slug = getSlugFromUrl();
+    if (slug) {
+        const game = games.find(g => slugify(g.name) === slug);
+        if (game) {
+            selectedGameId = game.id;
+            switchMainGame(game);
+            updateUrlAndSchema(game);
+        }
+    } else {
+        goToHome();
+    }
+});
+
+function getSlugFromUrl() {
+    const match = window.location.pathname.match(/\/games\/([a-z0-9\-]+)/);
+    return match ? match[1] : null;
+}
+
+function slugify(str) {
+    return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+// 切换主游戏时更新URL和结构化数据
+function updateUrlAndSchema(game) {
+    const slug = slugify(game.name);
+    const url = `/games/${slug}`;
+    window.history.pushState({}, '', url);
+    injectGameSchema(game, url);
+}
+
+// 动态注入VideoGame结构化数据
+function injectGameSchema(game, url) {
+    // 先移除旧的schema
+    const old = document.getElementById('game-schema');
+    if (old) old.remove();
+    // 新schema
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": game.name,
+        "image": window.location.origin + '/' + game.thumbnail,
+        "description": game.description || '',
+        "applicationCategory": capitalizeFirst(game.category) + 'Game',
+        "operatingSystem": "All",
+        "url": window.location.origin + url
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'game-schema';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+}
+
+// 页面加载时根据URL自动路由
+(function initSpaRoute() {
+    const slug = getSlugFromUrl();
+    if (slug) {
+        const game = games.find(g => slugify(g.name) === slug);
+        if (game) {
+            selectedGameId = game.id;
+            switchMainGame(game);
+            updateUrlAndSchema(game);
+        }
+    }
+})();
 
 // 页面加载时默认显示第一个游戏
 function renderDefaultGameDetail() {
