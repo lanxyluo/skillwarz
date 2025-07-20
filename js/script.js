@@ -287,7 +287,7 @@ const games = [
     },
     {
         id: 19,
-        name: "Puzzle Adventure",
+        name: "3D Super Rolling Ball Race",
         thumbnail: "images/Puzzle_Adventure.jpg",
         iframeUrl: "https://html5.gamedistribution.com/c77c8b1ffef242609915d126535b0ca9/?gd_sdk_referrer_url=https://www.example.com/games/puzzle-adventure",
         category: "puzzle",
@@ -302,7 +302,7 @@ const games = [
     },
     {
         id: 20,
-        name: "Brain Training Challenge",
+        name: "Yummy Tales 3",
         thumbnail: "images/Brain_Training_Challenge.jpg",
         iframeUrl: "https://html5.gamedistribution.com/09fa640bb18d4853842e529b615a7dad/?gd_sdk_referrer_url=https://www.example.com/games/brain-training-challenge",
         category: "puzzle",
@@ -317,7 +317,7 @@ const games = [
     },
     {
         id: 21,
-        name: "Mind Puzzle Quest",
+        name: "Crazy Goose Simulator",
         thumbnail: "images/Mind_Puzzle_Quest.jpg",
         iframeUrl: "https://html5.gamedistribution.com/f29467fbb55f4f4fbe4f3263a827195f/?gd_sdk_referrer_url=https://www.example.com/games/mind-puzzle-quest",
         category: "puzzle",
