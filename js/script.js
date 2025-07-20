@@ -288,8 +288,8 @@ const games = [
     {
         id: 19,
         name: "3D Super Rolling Ball Race",
-        thumbnail: "images/Puzzle_Adventure.jpg",
-        iframeUrl: "https://html5.gamedistribution.com/c77c8b1ffef242609915d126535b0ca9/?gd_sdk_referrer_url=https://www.example.com/games/puzzle-adventure",
+        thumbnail: "images/3D_Super_Rolling_Ball_Race.jpg",
+        iframeUrl: "https://html5.gamedistribution.com/c77c8b1ffef242609915d126535b0ca9/?gd_sdk_referrer_url=https://www.example.com/games/3d-super-rolling-ball-race",
         category: "puzzle",
         description: "Puzzle Adventure is an exciting HTML5 puzzle game that combines brain-teasing challenges with adventure elements. Solve puzzles to progress through mysterious worlds and unlock new levels!",
         features: [
@@ -303,8 +303,8 @@ const games = [
     {
         id: 20,
         name: "Yummy Tales 3",
-        thumbnail: "images/Brain_Training_Challenge.jpg",
-        iframeUrl: "https://html5.gamedistribution.com/09fa640bb18d4853842e529b615a7dad/?gd_sdk_referrer_url=https://www.example.com/games/brain-training-challenge",
+        thumbnail: "images/Yummy_Tales_3.jpg",
+        iframeUrl: "https://html5.gamedistribution.com/09fa640bb18d4853842e529b615a7dad/?gd_sdk_referrer_url=https://www.example.com/games/yummy-tales-3",
         category: "puzzle",
         description: "Brain Training Challenge is a comprehensive puzzle game designed to enhance your cognitive skills. Test your memory, logic, and problem-solving abilities with various brain-training exercises!",
         features: [
@@ -318,8 +318,8 @@ const games = [
     {
         id: 21,
         name: "Crazy Goose Simulator",
-        thumbnail: "images/Mind_Puzzle_Quest.jpg",
-        iframeUrl: "https://html5.gamedistribution.com/f29467fbb55f4f4fbe4f3263a827195f/?gd_sdk_referrer_url=https://www.example.com/games/mind-puzzle-quest",
+        thumbnail: "images/Crazy_Goose_Simulator.jpg",
+        iframeUrl: "https://html5.gamedistribution.com/f29467fbb55f4f4fbe4f3263a827195f/?gd_sdk_referrer_url=https://www.example.com/games/crazy-goose-simulator",
         category: "puzzle",
         description: "Mind Puzzle Quest is an innovative puzzle game that pushes the boundaries of traditional puzzle solving. Experience unique challenges that will truly test your mental agility and creativity!",
         features: [
