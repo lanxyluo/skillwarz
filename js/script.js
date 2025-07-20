@@ -329,6 +329,21 @@ const games = [
             "No download, play instantly in your browser"
         ],
         howToPlay: "Explore the unique puzzle mechanics and discover new ways to solve challenges. Use your creativity and think outside the box to complete each mind-bending level. Each puzzle requires a different approach!"
+    },
+    {
+        id: 22,
+        name: "Snow Rider 3D",
+        thumbnail: "images/Snow_Rider_3D.jpg",
+        iframeUrl: "https://html5.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8/?gd_sdk_referrer_url=https://www.example.com/games/snow-rider-3d",
+        category: "casual",
+        description: "Snow Rider 3D is an exciting winter sports game where you control a snowboarder racing down challenging mountain slopes. Experience the thrill of high-speed snowboarding with stunning 3D graphics and realistic physics!",
+        features: [
+            "Stunning 3D graphics and realistic snow physics",
+            "Multiple challenging mountain tracks",
+            "Smooth controls for precise snowboarding",
+            "No download, play instantly in your browser"
+        ],
+        howToPlay: "Use arrow keys or WASD to control your snowboarder. Navigate through the mountain tracks, avoid obstacles, and perform tricks to earn points. Try to achieve the fastest time and highest score!"
     }
 ];
 
@@ -353,6 +368,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     setupSmoothScrolling();
     renderDefaultMainGame();
+    setupHomeLogo();
     // 主推SkillWarz按钮切换主展示区
     const playSkillWarzBtn = document.getElementById('playSkillWarzBtn');
     if (playSkillWarzBtn) {
@@ -757,4 +773,43 @@ function addGameTracking() {
 }
 
 // Initialize tracking
-addGameTracking(); 
+addGameTracking();
+
+// Setup home logo functionality
+function setupHomeLogo() {
+    const homeLogo = document.getElementById('homeLogo');
+    if (homeLogo) {
+        homeLogo.addEventListener('click', function(e) {
+            e.preventDefault();
+            goToHome();
+        });
+    }
+}
+
+// Go to home page function
+function goToHome() {
+    // Reset to default game (first game)
+    if (games.length > 0) {
+        selectedGameId = games[0].id;
+        switchMainGame(games[0]);
+    }
+    
+    // Reset category filter to "All"
+    currentCategory = 'all';
+    loadGames(currentCategory);
+    
+    // Update category button states
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    categoryButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.category === 'all') {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Smooth scroll to top of page
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+} 
