@@ -476,6 +476,39 @@ function renderMainGameInfoArea(game) {
     document.getElementById('main-game-info-content').innerHTML = html;
 }
 
+// 动态插入面包屑导航
+function renderBreadcrumb(game) {
+    const categoryMap = {
+        action: 'Action Games',
+        strategy: 'Strategy Games',
+        casual: 'Casual Games',
+        puzzle: 'Puzzle Games'
+    };
+    // 先移除已存在的面包屑，避免重复
+    const old = document.querySelector('.breadcrumb-nav');
+    if (old) old.remove();
+    const html = `<nav aria-label="Breadcrumb" class="breadcrumb-nav mb-3">
+      <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">SkillWarz</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/games/${game.category}" itemprop="item"><span itemprop="name">${categoryMap[game.category]||game.category}</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">${game.name}</span>
+          <meta itemprop="position" content="3" />
+        </li>
+      </ol>
+    </nav>`;
+    // 只在主游戏内容区顶部插入
+    const mainGameContent = document.getElementById('main-game-content');
+    if (mainGameContent) mainGameContent.insertAdjacentHTML('afterbegin', html);
+}
+// 在展示主游戏时调用 renderBreadcrumb(game)
+
 // 修改createGameCard，直接返回.game-card元素
 function createGameCard(game) {
     const card = document.createElement('div');
